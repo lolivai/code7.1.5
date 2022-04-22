@@ -78,10 +78,6 @@ class MoodleClient(object):
         direct = self.path+'webservice/pluginfile.php/'+tokens[4]+'/user/private/'+tokens[-1]+'?token='+self.data['token']
         return direct
 
-    def getToken(self,url):
-        token = self.data['token']
-
-
     def getSessKey(self):
         fileurl = self.path + 'my/#'
         resp = self.session.get(fileurl,proxies=self.proxy)
@@ -366,7 +362,7 @@ class MoodleClient(object):
             sesskey = self.sesskey
             if self.sesskey=='':
                 sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
-            usertext =  'User0075_69'
+            usertext =  'ObisoftDev'
             query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
             client_id = str(soup.find('div',{'class':'filemanager'})['id']).replace('filemanager-','')
 
@@ -376,7 +372,7 @@ class MoodleClient(object):
             b = uuid.uuid4().hex
             upload_data = {
                 'title':(None,''),
-                'author':(None,'User0075'),
+                'author':(None,'ObysoftDev'),
                 'license':(None,'allrightsreserved'),
                 'itemid':(None,query['itemid']),
                 'repo_id':(None,str(self.repo_id)),
@@ -427,7 +423,7 @@ class MoodleClient(object):
             sesskey = self.sesskey
             if self.sesskey=='':
                 sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
-            usertext =  'User0075_69'
+            usertext =  'ObisoftDev'
             query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
             client_id = str(soup.find('div',{'class':'filemanager'})['id']).replace('filemanager-','')
 
@@ -437,7 +433,7 @@ class MoodleClient(object):
             b = uuid.uuid4().hex
             upload_data = {
                 'title':(None,''),
-                'author':(None,'User0075_69'),
+                'author':(None,'ObysoftDev'),
                 'license':(None,'allrightsreserved'),
                 'itemid':(None,query['itemid']),
                 'repo_id':(None,str(self.repo_id)),
@@ -479,7 +475,7 @@ class MoodleClient(object):
             sesskey = self.sesskey
             if self.sesskey=='':
                 sesskey  =  soup.find('input',attrs={'name':'sesskey'})['value']
-            usertext =  'User0075_69'
+            usertext =  'ObisoftDev'
             query = self.extractQuery(soup.find('object',attrs={'type':'text/html'})['data'])
             client_id = str(soup.find('input',{'name':'importfilechoose'})['id']).replace('filepicker-button-','')
 
@@ -489,7 +485,7 @@ class MoodleClient(object):
             b = uuid.uuid4().hex
             upload_data = {
                 'title':(None,''),
-                'author':(None,'User0075_69'),
+                'author':(None,'ObysoftDev'),
                 'license':(None,'allrightsreserved'),
                 'itemid':(None,query['itemid']),
                 'repo_id':(None,str(self.repo_id)),
