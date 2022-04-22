@@ -125,7 +125,6 @@ class ObigramClient(object):
             return json.loads(result, object_hook = lambda d : Namespace(**d)).result
         except:pass
         return None
-        
 
     def deleteMessage(self,chat_id,msg_id):
         try:
